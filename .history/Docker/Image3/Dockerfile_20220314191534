@@ -4,4 +4,4 @@ WORKDIR /app
 
 COPY . /app
 
-CMD ["python", "Auto-Mail-Deletion.py"]
+CMD ["ptyhon", "rng.py"]
