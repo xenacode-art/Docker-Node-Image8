@@ -41,9 +41,10 @@ for mail in messages:
              msg = email.message_from_bytes(response[1])
        #     decode the email subject
         subject = decode_header(msg["Subject"])[0][0]
-     if isinstance(subject, bytes):
+           if isinstance(subject, bytes):
    #             if it's a bytes type, decode to str
-                 subject = subject.decode()
-     print("Deleting", subject)
+                # subject = subject.decode()
+            # print("Deleting", subject)
    # mark the mail as deleted
-     imap.store(mail, "+FLAGS", "\\Deleted")
+    # imap.store(mail, "+FLAGS", "\\Deleted")
+# 

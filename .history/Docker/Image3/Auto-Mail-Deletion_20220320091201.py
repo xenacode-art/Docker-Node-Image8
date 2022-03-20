@@ -44,6 +44,6 @@ for mail in messages:
      if isinstance(subject, bytes):
    #             if it's a bytes type, decode to str
                  subject = subject.decode()
-     print("Deleting", subject)
+    print("Deleting", subject)
    # mark the mail as deleted
      imap.store(mail, "+FLAGS", "\\Deleted")

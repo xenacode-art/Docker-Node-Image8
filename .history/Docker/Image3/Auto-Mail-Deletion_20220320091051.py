@@ -18,17 +18,17 @@ imap.login(username, password)
 # imap.select("SPAM")
 # imap.list()
 # search for specific mails by sender
-# status, messages = imap.search(None, 'FROM "googlealerts-noreply@google.com"')
+#status, messages = imap.search(None, 'FROM "googlealerts-noreply@google.com"')
 imap.select("INBOX")
 
 # search for specific mails to delete
 # to get mails after a specific date
-# status, messages = imap.search(None, 'SINCE "01-JAN-2020"')
+#status, messages = imap.search(None, 'SINCE "01-JAN-2020"')
 # to get mails before a specific date
 # imap.list()
 status, messages = imap.search(None, 'BEFORE "01-MAR-2022"')
 # status, messages = imap.search(None, 'FROM "googlealerts-noreply@google.com"')
-# status, messages = imap.search(None, 'FROM "ALL"')
+#status, messages = imap.search(None, 'FROM "ALL"')
 
 # convert messages to a list of email IDs
 messages = messages[0].split(b' ')
@@ -40,10 +40,11 @@ for mail in messages:
         if isinstance(response, tuple):
              msg = email.message_from_bytes(response[1])
        #     decode the email subject
-        subject = decode_header(msg["Subject"])[0][0]
-     if isinstance(subject, bytes):
+              subject = decode_header(msg["Subject"])[0][0]
+            # if isinstance(subject, bytes):
    #             if it's a bytes type, decode to str
-                 subject = subject.decode()
-     print("Deleting", subject)
+                # subject = subject.decode()
+            # print("Deleting", subject)
    # mark the mail as deleted
-     imap.store(mail, "+FLAGS", "\\Deleted")
+    # imap.store(mail, "+FLAGS", "\\Deleted")
+# 
