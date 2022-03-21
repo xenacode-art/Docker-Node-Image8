@@ -43,6 +43,6 @@ jobs:
           context: .
           file: ./Dockerfile
           push: true
-          tags: ${{ secrets.xenacod }}/Devops:latest
-          cache-from: type=registry,ref=${{ secrets.xenacod }}/Devops:buildcache
-          cache-to: type=registry,ref=${{ secrets.xenacod }}/Devops:buildcache,mode=max
+          tags: ${{ secrets.DOCKER_HUB_USERNAME }}/Devops:latest
+          cache-from: type=registry,ref=${{ secrets.DOCKER_HUB_USERNAME }}/Devops:buildcache
+          cache-to: type=registry,ref=${{ secrets.DOCKER_HUB_USERNAME }}/Devops:buildcache,mode=max
