@@ -43,6 +43,6 @@ jobs:
           context: .
           file: ./Dockerfile
           push: true
-          tags: ${{ secrets.DOCKER_HUB_USERNAME }}/${{ github.event.repository.devops }}:latest
-          cache-from: type=registry,ref=${{ secrets.DOCKER_HUB_USERNAME }}/devops:buildcache
-          cache-to: type=registry,ref=${{ secrets.DOCKER_HUB_USERNAME }}/devops:buildcache,mode=max
+          tags: ${{ secrets.DOCKER_HUB_USERNAME }}/${{ github.event.repository.name }}:latest
+          cache-from: type=registry,ref=${{ secrets.DOCKER_HUB_USERNAME }}/${{ github.event.repository.name }}:buildcache
+          cache-to: type=registry,ref=${{ secrets.DOCKER_HUB_USERNAME }}/${{ github.event.repository.name }}:buildcache,mode=max
